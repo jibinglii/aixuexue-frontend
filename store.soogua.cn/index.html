@@ -240,7 +240,7 @@
                             <h3>西安学学信息技术有限公司</h3>
                         </div>
                         <ul class="quick-link-list">
-                            <li>网址：www.aixuexue.com</li>
+                            <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
                             <li>电话：029-87654320</li>
                             <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                         </ul>
@@ -261,13 +261,12 @@
                         <div class="footer-section-title col-12 p-0">
                             <h3>搜瓜动态</h3>
                         </div>
-                        <ul class="quick-link-list">
-                            <li><a href="#">公告 | 新版搜瓜即将和大家见面 敬请期待！</a></li>
-                            <!-- <li><a href="#">i黑马 | 搜瓜年交易额达300亿 需更多的分销商</a></li> -->
-                            <li><a href="#">公告 | 新增更多游戏平台项目 欢迎大家多多了解</a></li>
-                            <li><a href="news.html" class="more">更多内容</a></li>
+                        <ul class="quick-link-list" id="app" v-cloak>
+                            <li v-for="item in items" :key="item.id">
+                                <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
+                                <li><a href="news.html" class="more">更多内容</a></li>
+                            </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -335,6 +334,26 @@
     <script src="js/scripts.js"></script>
 
     <script src="js/jquery-weui.min.js"></script>
+    <script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
+    <script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                items: []
+            },
+            created () {
+                this.getContents()
+            },
+            methods: {
+                getContents(){
+                    axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                        this.items = data.data.data.contents.data
+                    })
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

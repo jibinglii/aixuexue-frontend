@@ -13,9 +13,13 @@
     width: 80%;
     margin: 0px auto 20px;
 }
-
-.list li img {
-    margin-right: 25px;
+.list li .img {
+    margin-right: 30px;
+}
+.list li .img img {
+    width: 136px;
+    height: 136px;
+    object-fit: cover;
 }
 
 .list li h4 {
@@ -97,7 +101,7 @@
 }
 
 .newdetail .left span {
-    font-size: 0.3rem;
+    font-size: 0.6rem;
     color: #999;
 }
 
@@ -205,4 +209,7 @@
         min-height: 0px;
         padding: 0;
     }
+}
+#content.newdetail img{
+    max-width: 100%;
 }

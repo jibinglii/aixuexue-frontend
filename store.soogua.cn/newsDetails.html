@@ -68,59 +68,20 @@
             <a href="news.html"><img src="picture/pre.png" alt=""> 返回列表</a>
         </div>
     </div>
-    <div class="auto-container newdetail">
+    <div class="auto-container newdetail" id="content" v-cloak>
         <div class="row">
             <div class="col-lg-9 col-md-9 col-xs-12 left">
-                <h3 class="title">易观智库：中国SaaS客服市场专题研究报告2015</h3>
-                <span>Nicolas·发表于2019-03-17 15:32:54·298次阅读</span>
-
-                <p>前言：从诺基亚、Symbian到环信，马晓宇一直在通过技术拉进人与人直接的距离。2013年联合创立环信，从IM开始到实时音视频，不断为开发者和企业提供易用可靠的通信服务。马晓宇说，团队要提供全场景的音视频社交能力，“TC”只是一个开始。</p>
-                <div class="img">
-                    <img src="picture/new-img.png" alt="">
-                </div>
-                <p>
-                    熟人社交，陌生人社交，职场社交，荷尔蒙社交，cp社交，二次元社交等，社交的本质是什么?社交需求(Love and belonging needs)是精神层面的需求，是感情上的需要，是爱和归属。社交也是尊重的需求(esteem needs)，渴望获得身份认同
-
-                </p>
-                <p>
-                    从短信，彩信，即时通讯，到5G时代的实时视频，社交内容的密度和互动手段不断革新。无论是先看脸再聊天，还是先聊天再看脸，都是试图高效的解决社交关系的建立和维系。叔本华说过：人要么孤独 要么庸俗。5G时代，要么搞自媒体孤独的涨粉，要么用环信音视频开发视频交友庸俗的赚钱。
-
-                </p>
-                <h4>LiveVideoStack：马晓宇你好，非常开心邀请到您接受LiveVideoStack的采访。能否向我们的读者介绍下自己？</h4>
-                <p><b>
-					马晓宇：
-				</b> 2014年4月我们上线了第一个即时通信云服务，在做即时通讯云服务方面环信是国内第一家。最初这只是几个人聊天当中的一个想法，变成了企业服务里一个细分行业，很多公司都共同在做这个事情，大家也都是为了更好的服务用户和开发者。之前整个行业是以像环信这样的创业公司为主，但从近两年开始，可以看到腾讯、网易都在重点投入这个方向，因为大家都觉得这是云服务里PaaS平台的基础服务，并且是开发者生态闭环中一个重要组件。所以目前即时通讯服务的竞争相对比较激烈，既有互联网公司和创业公司，也有像腾讯这样的TOP企业。
-
-                </p>
-                <p>整个市场还处于快速发展的阶段，从环信自己的业务出发，包括已经上线的应用本身来看，我们注意到两个比较大的趋势，一是从去年开始，开发者更多的从原生应用开始转向做一些小程序和流量入口，这是目前逐渐显现的趋势。在环信的后台也能看到越来越多的用户不再去做Native而是转去做小程序，不管是在IM还是客服方面。另外从后台数据也可以看到，越来越多用户从基本的文字、图片聊天逐渐趋向实时语音和实时视频，在环信即时通讯云服务上我们也感受到了这中沟通方式上的变化。</p>
-                <!-- navigation -->
-                <div class="navigation">
-                    <ul class="page">
-                        <li><a href="#">上一篇：打击电信诈骗保障客户安全，环信客服</a></li>
-                        <li><a href="#">下一篇：《2019云计算企业百强榜》发布环信</a></li>
-                    </ul>
-                </div>
-
+                <h3 class="title">{{ content.title }}</h3>
+                <span>发布于 {{ content.created_at }}</span>
+                <div class="content" v-html="content.content"></div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-12 right">
                 <p class="title">最新资讯</p>
                 <ul>
-                    <li>
-                        <a href="">
-                            <p>欢欣马晓宇：我所理解的5G我所理解的5G</p>
-                            <span>发布于 2019-06-05 15:32:43</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p>欢欣马晓宇：我所理解的5G我所理解的5G</p>
-                            <span>发布于 2019-06-05 15:32:43</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p>欢欣马晓宇：我所理解的5G我所理解的5G</p>
-                            <span>发布于 2019-06-05 15:32:43</span>
+                    <li v-for="item in zixun">
+                        <a :href="'newsDetails.html?id=' + item.id">
+                            <p>{{ item.title }}</p>
+                            <span>发布于 {{ item.created_at }}</span>
                         </a>
                     </li>
                 </ul>
@@ -129,57 +90,58 @@
     </div>
 
     <footer id="foot">
-        <div class="footer-top overlay-2 section-back-image-2" data-background="">
-            <div class="auto-container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
-                        <div class="footer-section-title col-12 p-0">
-                            <h3>西安学学信息技术有限公司</h3>
+            <div class="footer-top overlay-2 section-back-image-2" data-background="">
+                <div class="auto-container">
+                    <div class="row">
+    
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
+                            <div class="footer-section-title col-12 p-0">
+                                <h3>西安学学信息技术有限公司</h3>
+                            </div>
+                            <ul class="quick-link-list">
+                                <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
+                                <li>电话：029-87654320</li>
+                                <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
+                            </ul>
                         </div>
-                        <ul class="quick-link-list">
-                            <li>网址：www.aixuexue.com</li>
-                            <li>电话：029-87654320</li>
-                            <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
-                        <dl>
-                            <dt><img src="picture/app.png" class="img-responsive"/></dt>
-                            <dd>搜瓜公众号</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
-                        <dl>
-                            <dt><img src="picture/us.png" class="img-responsive"/></dt>
-                            <dd>搜瓜微博</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget">
-                        <div class="footer-section-title col-12 p-0">
-                            <h3>搜瓜动态</h3>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
+                            <dl>
+                                <dt><img src="picture/app.png" class="img-responsive"/></dt>
+                                <dd>搜瓜公众号</dd>
+                            </dl>
                         </div>
-                        <ul class="quick-link-list">
-                            <li><a href="#">公告 | 新版搜瓜即将和大家见面 敬请期待！</a></li>
-                            <!-- <li><a href="#">i黑马 | 搜瓜年交易额达300亿 需更多的分销商</a></li> -->
-                            <li><a href="#">公告 | 新增更多游戏平台项目 欢迎大家多多了解</a></li>
-                            <li><a href="news.html" class="more">更多内容</a></li>
-                        </ul>
-
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
+                            <dl>
+                                <dt><img src="picture/us.png" class="img-responsive"/></dt>
+                                <dd>搜瓜微博</dd>
+                            </dl>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget">
+                            <div class="footer-section-title col-12 p-0">
+                                <h3>搜瓜动态</h3>
+                            </div>
+                            <ul class="quick-link-list" id="app" v-cloak>
+                                <li v-for="item in items" :key="item.id">
+                                    <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
+                                    <li><a href="news.html" class="more">更多内容</a></li>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <div class="auto-container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
-                        <p>西安学学信息技术有限公司 © xxxx-xxxx soogua.cn 版权所有 陕ICP12345678号</p>
+            <div class="copyright">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
+                            <p>西安学学信息技术有限公司 © 2010-2019 soogua.cn 版权所有 
+                                <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-3</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 </body>
 <!-- Latest jQuery -->
 <script src="js/jquery-2.2.4.min.js"></script>
@@ -197,5 +159,65 @@
 <script src="js/scrolltopcontrol.js"></script>
 <!-- scripts js -->
 <script src="js/scripts.js"></script>
+<script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
+    <script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script>
+         var vm = new Vue({
+            el: '#app',
+            data: {
+                items: []
+            },
+            created () {
+                this.getContents()
+            },
+            methods: {
+                getContents(){
+                    axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                        this.items = data.data.data.contents.data
+                    })
+                }
+            }
+        })
+        var content = new Vue({
+            el: '#content',
+            data: {
+                content: {},
+                zixun: []
+            },
+            created () {
+                this.getContent(this.getQueryParam('id'))
+                this.getZixuan()
+            },
+            methods: {
+                getContent(id){
+                    axios.get('https://soogua.aixuexue.net/api/v1/articles/' + id).then(data => {
+                        this.content = data.data.data
+                        document.title = this.content.title
+                    })
+                },
+                getQueryParam(key) {
+                    if (!key) {
+                        return false;
+                    }
+                    var value = '';
+                    var paramStr = window.location.search ? window.location.search.substr(1) : '';
 
+                    if (paramStr) {
+                        paramStr.split('&').forEach(function (param) {
+                            var arr = param.split('=');
+                            if (arr[0] == key) {
+                                value = arr[1];
+                            }
+                        });
+                    }
+                    return value;
+                },
+                getZixuan () {
+                    axios.get('https://soogua.aixuexue.net/api/v1/articles?category=25&size=5&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                        this.zixun = data.data.data.contents.data
+                    })
+                }
+            }
+        })
+    </script>
 </html>
