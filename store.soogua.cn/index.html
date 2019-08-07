@@ -135,7 +135,7 @@
             <p>
                 寻找更多可能
             </p>
-            <a href="#" class="more_btn">免费入驻</a>
+            <a target="_blank" href="https://soogua.aixuexue.net/store/apply/qudao?token=eyJpdiI6ImsrM0FlQXVZQVwvOHVjQUc0SmdwTnV3PT0iLCJ2YWx1ZSI6IlJvcHpwRWgrY21qbVwvNlRVbWZiOVFmQVFUT2FGb1hOUGVISkRja3A2dmVOamdFNDVSc25TcDdkTUxyOTJkaFVMeFZ6eHU2NlVlZHZwMFRrVEtwUk9uUT09IiwibWFjIjoiNDIyNDZkMmQ1MTdkMzJhZmEyYTUwODk1NzMyYWRiMGMxMjM0MTZmNDgyNzUxZjRkZDA3Mzc2N2I3OGRiYjcxNSJ9" class="more_btn">免费入驻</a>
         </div>
         <div class="auto-container more-list">
             <div class="row">
@@ -185,7 +185,7 @@
                     <p>智能适配 + 流量扶持 + 爆款策划</p>
                     <p>专题好物策划，智能首页推荐，新店扶持通道</p>
                     <p>让你的产品自带流量</p>
-                    <a href="#" class="store_btn">进入商城</a>
+                    <a href="https://soogua.aixuexue.net/shop/index.html" target="_blank" class="store_btn">进入商城</a>
                 </div>
             </div>
         </div>
@@ -199,7 +199,7 @@
                     <p>许你资产类目展示</p>
                     <p>社交圈、自媒体、游戏账号</p>
                     <p>互联网服务等</p>
-                    <a href="#" class="soogua_btn">下载搜瓜</a>
+                    <a href="https://soogua.aixuexue.net/download" target="_blank" class="soogua_btn">下载搜瓜</a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 img">
                     <img src="picture/soogua.png" alt="" class="img-responsive">
@@ -223,9 +223,7 @@
                     <p>更多人在这里为热爱找到依据 </p>
                     <p>不“玩物丧志”，我们 “玩物尚值”</p>
                 </div>
-
             </div>
-
         </div>
         </div>
     </section>
@@ -240,7 +238,7 @@
                             <h3>西安学学信息技术有限公司</h3>
                         </div>
                         <ul class="quick-link-list">
-                            <li>网址：www.aixuexue.com</li>
+                            <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
                             <li>电话：029-87654320</li>
                             <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                         </ul>
@@ -261,13 +259,12 @@
                         <div class="footer-section-title col-12 p-0">
                             <h3>搜瓜动态</h3>
                         </div>
-                        <ul class="quick-link-list">
-                            <li><a href="#">公告 | 新版搜瓜即将和大家见面 敬请期待！</a></li>
-                            <!-- <li><a href="#">i黑马 | 搜瓜年交易额达300亿 需更多的分销商</a></li> -->
-                            <li><a href="#">公告 | 新增更多游戏平台项目 欢迎大家多多了解</a></li>
-                            <li><a href="news.html" class="more">更多内容</a></li>
+                        <ul class="quick-link-list" id="app" v-cloak>
+                            <li v-for="item in items" :key="item.id">
+                                <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
+                                <li><a href="news.html" class="more">更多内容</a></li>
+                            </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -306,6 +303,26 @@
     <script src="js/scripts.js"></script>
 
     <script src="js/jquery-weui.min.js"></script>
+    <script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
+    <script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                items: []
+            },
+            created () {
+                this.getContents()
+            },
+            methods: {
+                getContents(){
+                    axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                        this.items = data.data.data.contents.data
+                    })
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
