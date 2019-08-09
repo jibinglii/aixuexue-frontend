@@ -320,7 +320,10 @@
         color: #25D4D0;
     }
     .section .desc img.logo2 {
-        display: none
+        <<<<<<< HEAD display: none=======display: block;
+        width: 27%;
+        margin: 0 auto 7px;
+        >>>>>>>master
     }
     .section .desc h3,
     .section .desc h2 {
@@ -338,8 +341,9 @@
     }
     .section .cover {
         position: absolute;
-        top: 6.5rem;
-        left: 0;
+        <<<<<<< HEAD top: 6.5rem;
+        =======top: 7.5rem;
+        >>>>>>>master left: 0;
         width: 100%;
         height: 33rem;
         background-position: center;
@@ -496,7 +500,9 @@ footer .copyright {
 
 @media (min-width:376px) and (max-width:414px) {
     .section .cover {
-        top: 5.5rem;
+        <<<<<<< HEAD top: 5.5rem;
+        =======top: 7rem;
+        >>>>>>>master
     }
 }
 
