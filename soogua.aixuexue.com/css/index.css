@@ -550,7 +550,7 @@ footer .copyright {
     }
     /* 侧边栏 */
     #fp-nav ul li {
-        margin: 20px 2px !important;
+        margin: 20px 0px !important;
     }
     #fp-nav ul li a span {
         width: 8px !important;
@@ -559,6 +559,6 @@ footer .copyright {
     #fp-nav ul li a.active span {
         width: 15px !important;
         height: 15px !important;
-        margin-left: -2px !important;
+        margin-left: -4px !important;
     }
 }
