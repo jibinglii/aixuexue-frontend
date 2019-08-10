@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" />
     <title>微商城官网</title>
     <link rel="stylesheet" href="css/jquery-weui.min.css">
     <!-- Bootstrap core CSS -->
@@ -135,7 +135,8 @@
             <p>
                 寻找更多可能
             </p>
-            <a target="_blank" href="https://soogua.aixuexue.net/store/apply/qudao?token=eyJpdiI6ImsrM0FlQXVZQVwvOHVjQUc0SmdwTnV3PT0iLCJ2YWx1ZSI6IlJvcHpwRWgrY21qbVwvNlRVbWZiOVFmQVFUT2FGb1hOUGVISkRja3A2dmVOamdFNDVSc25TcDdkTUxyOTJkaFVMeFZ6eHU2NlVlZHZwMFRrVEtwUk9uUT09IiwibWFjIjoiNDIyNDZkMmQ1MTdkMzJhZmEyYTUwODk1NzMyYWRiMGMxMjM0MTZmNDgyNzUxZjRkZDA3Mzc2N2I3OGRiYjcxNSJ9" class="more_btn">免费入驻</a>
+            <a target="_blank" href="https://soogua.aixuexue.net/store/apply/qudao?token=eyJpdiI6ImsrM0FlQXVZQVwvOHVjQUc0SmdwTnV3PT0iLCJ2YWx1ZSI6IlJvcHpwRWgrY21qbVwvNlRVbWZiOVFmQVFUT2FGb1hOUGVISkRja3A2dmVOamdFNDVSc25TcDdkTUxyOTJkaFVMeFZ6eHU2NlVlZHZwMFRrVEtwUk9uUT09IiwibWFjIjoiNDIyNDZkMmQ1MTdkMzJhZmEyYTUwODk1NzMyYWRiMGMxMjM0MTZmNDgyNzUxZjRkZDA3Mzc2N2I3OGRiYjcxNSJ9"
+                class="more_btn">免费入驻</a>
         </div>
         <div class="auto-container more-list">
             <div class="row">
@@ -239,19 +240,19 @@
                         </div>
                         <ul class="quick-link-list">
                             <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
-                            <li>电话：029-87654320</li>
+                            <li>电话：400-801-5153</li>
                             <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
                         <dl>
-                            <dt><img src="picture/app.png" class="img-responsive"/></dt>
+                            <dt><img src="picture/nopublic.jpeg" class="img-responsive"/></dt>
                             <dd>搜瓜公众号</dd>
                         </dl>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
                         <dl>
-                            <dt><img src="picture/us.png" class="img-responsive"/></dt>
+                            <dt><img src="picture/weibo.jpg" class="img-responsive"/></dt>
                             <dd>搜瓜微博</dd>
                         </dl>
                     </div>
@@ -311,11 +312,11 @@
             data: {
                 items: []
             },
-            created () {
+            created() {
                 this.getContents()
             },
             methods: {
-                getContents(){
+                getContents() {
                     axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
                         this.items = data.data.data.contents.data
                     })

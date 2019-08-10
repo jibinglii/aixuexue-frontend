@@ -482,6 +482,10 @@ footer .copyright {
     color: #999999;
 }
 
+footer .copyright a {
+    color: #999999;
+}
+
 @media screen and (max-width:320px) {
     .page7 .aboutUs .content p {
         font-size: 1em;
