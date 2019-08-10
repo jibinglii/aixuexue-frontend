@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" />
     <title>微商城官网-新闻列表</title>
     <link rel="stylesheet" href="css/jquery-weui.min.css">
     <!-- Bootstrap core CSS -->
@@ -135,7 +135,7 @@
             <div class="auto-container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
-                        <p>西安学学信息技术有限公司 © 2010-2019 soogua.cn 版权所有 
+                        <p>西安学学信息技术有限公司 © 2010-2019 soogua.cn 版权所有
                             <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-3</a>
                         </p>
                     </div>
@@ -169,11 +169,11 @@
         data: {
             items: []
         },
-        created () {
+        created() {
             this.getContents()
         },
         methods: {
-            getContents(){
+            getContents() {
                 axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
                     this.items = data.data.data.contents.data
                 })
@@ -187,36 +187,37 @@
             page: 1,
             last_page: 1
         },
-        created () {
+        created() {
             this.getContents();
         },
         methods: {
-            getContents () {
+            getContents() {
                 axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=10&fields[article]=id,category,title,summary,created_at,img&page=' + this.page)
-                .then(data => {
-                    this.items = data.data.data.contents.data
-                    this.last_page = data.data.data.contents.last_page
-                }).then(() => {
-                    if (this.page == 1){
-                        $("#page").bootstrapPaginator({
-                            bootstrapMajorVersion: 3, //对应的bootstrap版本
-                            currentPage: this.page, //当前页数
-                            numberOfPages: 10, //每次显示页数
-                            totalPages: this.last_page, //总页数
-                            shouldShowPage: true, //是否显示该按钮
-                            useBootstrapTooltip: false,
-                            onPageClicked: (event, originalEvent, type, page) => {
-                                this.page = page;
-                                this.getContents();
-                            }
-                        });
-                    }
-                })
+                    .then(data => {
+                        this.items = data.data.data.contents.data
+                        this.last_page = data.data.data.contents.last_page
+                    }).then(() => {
+                        if (this.page == 1) {
+                            $("#page").bootstrapPaginator({
+                                bootstrapMajorVersion: 3, //对应的bootstrap版本
+                                currentPage: this.page, //当前页数
+                                numberOfPages: 10, //每次显示页数
+                                totalPages: this.last_page, //总页数
+                                shouldShowPage: true, //是否显示该按钮
+                                useBootstrapTooltip: false,
+                                onPageClicked: (event, originalEvent, type, page) => {
+                                    this.page = page;
+                                    this.getContents();
+                                }
+                            });
+                        }
+                    })
             },
-            view(item){
+            view(item) {
                 // location.href = 'newsDetails.html?id=' + item.id
             }
         }
     })
 </script>
+
 </html>
