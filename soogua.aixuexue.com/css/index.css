@@ -7,7 +7,7 @@
 /*导航*/
 
 #mainNav {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.1);
     border-color: transparent;
     padding: 0 0px 0 40px;
 }
