@@ -157,7 +157,7 @@
         },
         methods: {
             getContents() {
-                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
                     this.items = data.data.data.contents.data
                 })
             }
