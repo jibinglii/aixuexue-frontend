@@ -5,70 +5,58 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" />
-    <title>微商城官网-新闻详情</title>
-    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <title>soogua官方网站-新闻列表</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- icofont icon -->
-    <link rel="stylesheet" href="css/icofont.css">
-    <!--- meanmenu Css-->
-    <link rel="stylesheet" href="css/meanmenu.min.css" media="all" />
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!--- owl carousel Css-->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/news.css">
 </head>
 
 <body>
-    <!-- 导航 -->
-    <header class="main-header header-1">
-        <div class="auto-container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 logo_img col-xs-8">
-                    <img src="picture/logo.png" />
-                </div>
-                <div class="col-lg-6 col-md-6 col-xs-6 d-lg-block d-md-none d-sm-none d-none ">
-                    <nav class="navbar navbar-expand-lg justify-content-left">
-                        <ul class="navbar-nav">
-                            <li class="active dropdown"><a href="index.html" class="nav-link">介绍</a></li>
-                            <li class="dropdown"><a href="index.html?#more" class="nav-link">入驻</a></li>
-                            <li class="dropdown"><a href="index.html?#advant" class="nav-link">功能</a></li>
-                            <li class="dropdown"><a href="index.html?#soogua" class="nav-link">下载</a></li>
-                            <li class="dropdown"><a href="index.html?#foot" class="nav-link">联系</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- mobile -->
-                <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block col-xs-8">
-                    <div class="col-lg-6">
-                        <div class="mobile-menu">
-                            <nav id="dropdown">
-                                <ul class="navbar-nav">
-                                    <li><a href="index.html">介绍</a></li>
-                                    <li><a href="index.html?#more">入驻</a></li>
-                                    <li><a href="index.html?#advant">功能</a></li>
-                                    <li><a href="index.html?#soogua">下载</a></li>
-                                    <li><a href="index.html?#foot">联系</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll col-lg-7 col-md-7">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> 
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+             </button>
+                <a href="#page-top" class="navbar-brand"><img src="images/logo.png" class="img-responsive" alt=""></a>
+            </div>
+
+            <div class="collapse navbar-collapse col-lg-5 col-md-5" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="active">
+                        <a class="page-scroll" href="index.html?#index">下载</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html?#introduct">介绍</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html?#aboutus">关于</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html?#aboutus">联系</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+        <!-- /.container-fluid -->
+    </nav>
 
     <div class="source">
-        <div class="auto-container">
+        <div class="container">
             <p>媒体报道</p>
             <a href="news.html"><img src="picture/pre.png" alt=""> 返回列表</a>
         </div>
     </div>
-    <div class="auto-container newdetail" id="content" v-cloak>
+    <div class="container newdetail" id="content" v-cloak>
         <div class="row">
             <div class="col-lg-9 col-md-9 col-xs-12 left">
                 <h3 class="title">{{ content.title }}</h3>
@@ -93,30 +81,29 @@
         <div class="footer-top overlay-2 section-back-image-2" data-background="">
             <div class="auto-container">
                 <div class="row">
-
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
                         <div class="footer-section-title col-12 p-0">
                             <h3>西安学学信息技术有限公司</h3>
                         </div>
                         <ul class="quick-link-list">
-                            <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
+                            <li>网址：https://soogua.aixuexue.com/</li>
                             <li>电话：400-801-5153</li>
                             <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                         </ul>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
                         <dl>
-                            <dt><img src="picture/nopublic.jpeg" class="img-responsive"/></dt>
-                            <dd>搜瓜公众号</dd>
+                            <dt><img src="picture/nopublic.jpeg" class=""/></dt>
+                            <dd>公众号</dd>
                         </dl>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
                         <dl>
-                            <dt><img src="picture/weibo.jpg" class="img-responsive"/></dt>
-                            <dd>搜瓜微博</dd>
+                            <dt><img src="picture/weibo.png" class=""/></dt>
+                            <dd>微博</dd>
                         </dl>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget mobile_news">
                         <div class="footer-section-title col-12 p-0">
                             <h3>搜瓜动态</h3>
                         </div>
@@ -133,10 +120,8 @@
         <div class="copyright">
             <div class="auto-container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
-                        <p>西安学学信息技术有限公司 © 2010-2019 soogua.cn 版权所有
-                            <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-3</a>
-                        </p>
+                    <div class="col-lg-12 col-md-12 col-12 copyright-text">
+                        <p>西安学学信息技术有限公司 © 2018-2019 soogua.aixuexue.com 版权所有 <a href="http://beian.miit.gov.cn/">陕ICP备18017596号-1</a></p>
                     </div>
                 </div>
             </div>
@@ -145,22 +130,22 @@
 </body>
 <!-- Latest jQuery -->
 <script src="js/jquery-2.2.4.min.js"></script>
-<!-- popper js -->
-<script src="js/popper.min.js"></script>
 <!-- Latest compiled and minified Bootstrap -->
+<script src="js/bootstrap-paginator.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!-- meanmenu min js  -->
-<script src="js/jquery.meanmenu.min.js"></script>
-<!-- Sticky JS -->
-<script src="js/jquery.sticky.js"></script>
-<!-- owl-carousel min js  -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- scrolltopcontrol js -->
-<script src="js/scrolltopcontrol.js"></script>
-<!-- scripts js -->
-<script src="js/scripts.js"></script>
 <script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
 <script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+<script>
+    /* 长宽占位 rem算法, 根据root的rem来计算各元素相对rem, 默认html 320/20 = 16px */
+    function placeholderPic() {
+        var w = document.documentElement.offsetWidth;
+        document.documentElement.style.fontSize = w / 20 + 'px';
+    }
+    placeholderPic();
+    window.onresize = function() {
+        placeholderPic();
+    }
+</script>
 <script>
     var vm = new Vue({
         el: '#app',
