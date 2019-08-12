@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" />
+    <title>微商城官网-新闻列表</title>
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- icofont icon -->
+    <link rel="stylesheet" href="css/icofont.css">
+    <!--- meanmenu Css-->
+    <link rel="stylesheet" href="css/meanmenu.min.css" media="all" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!--- owl carousel Css-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
+</head>
+
+<body>
+    <!-- 导航 -->
+    <header class="main-header header-1">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 logo_img col-xs-8">
+                    <img src="picture/logo.png" />
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 d-lg-block d-md-none d-sm-none d-none ">
+                    <nav class="navbar navbar-expand-lg justify-content-left">
+                        <ul class="navbar-nav">
+                            <li class="active dropdown"><a href="index.html" class="nav-link">介绍</a></li>
+                            <li class="dropdown"><a href="index.html?#more" class="nav-link">入驻</a></li>
+                            <li class="dropdown"><a href="index.html?#advant" class="nav-link">功能</a></li>
+                            <li class="dropdown"><a href="index.html?#soogua" class="nav-link">下载</a></li>
+                            <li class="dropdown"><a href="index.html?#foot" class="nav-link">联系</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- mobile -->
+                <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block col-xs-8">
+                    <div class="col-lg-6">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul class="navbar-nav">
+                                    <li><a href="index.html">介绍</a></li>
+                                    <li><a href="index.html?#more">入驻</a></li>
+                                    <li><a href="index.html?#advant">功能</a></li>
+                                    <li><a href="index.html?#soogua">下载</a></li>
+                                    <li><a href="index.html?#foot">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="source">
+        <div class="auto-container">
+            <p>搜瓜动态</p>
+        </div>
+    </div>
+    <div class="auto-container">
+        <ul class="list" id="content" v-cloak>
+            <li v-for="item in items" :key="item.id" @click="view(item)">
+                <div class="img">
+                    <img :src="item.img" alt="">
+                </div>
+                <div>
+                    <h4>{{ item.title }}</h4>
+                    <p>
+                        {{ item.summary }}
+                    </p>
+                    <a :href="'newsDetails.html?id=' + item.id">阅读全文</a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- navigation -->
+        <div class="navigation">
+            <ul id="page"></ul>
+        </div>
+
+    </div>
+
+    <footer id="foot">
+        <div class="footer-top overlay-2 section-back-image-2" data-background="">
+            <div class="auto-container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
+                        <div class="footer-section-title col-12 p-0">
+                            <h3>西安学学信息技术有限公司</h3>
+                        </div>
+                        <ul class="quick-link-list">
+                            <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
+                            <li>电话：400-801-5153</li>
+                            <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
+                        <dl>
+                            <dt><img src="picture/nopublic.jpeg" class="img-responsive"/></dt>
+                            <dd>搜瓜公众号</dd>
+                        </dl>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-6  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
+                        <dl>
+                            <dt><img src="picture/weibo.jpg" class="img-responsive"/></dt>
+                            <dd>搜瓜微博</dd>
+                        </dl>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget">
+                        <div class="footer-section-title col-12 p-0">
+                            <h3>搜瓜动态</h3>
+                        </div>
+                        <ul class="quick-link-list" id="app" v-cloak>
+                            <li v-for="item in items" :key="item.id">
+                                <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
+                                <li><a href="news.html" class="more">更多内容</a></li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
+                        <p>西安学学信息技术有限公司 © 2010-2019 soogua.cn 版权所有
+                            <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-3</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Latest jQuery -->
+<script src="js/jquery-2.2.4.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- meanmenu min js  -->
+<script src="js/jquery.meanmenu.min.js"></script>
+<!-- Sticky JS -->
+<script src="js/jquery.sticky.js"></script>
+<!-- owl-carousel min js  -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- scrolltopcontrol js -->
+<script src="js/scrolltopcontrol.js"></script>
+<!-- scripts js -->
+<script src="js/scripts.js"></script>
+<script src="js/bootstrap-paginator.js"></script>
+<script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
+<script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            items: []
+        },
+        created() {
+            this.getContents()
+        },
+        methods: {
+            getContents() {
+                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                    this.items = data.data.data.contents.data
+                })
+            }
+        }
+    });
+    var content = new Vue({
+        el: '#content',
+        data: {
+            items: [],
+            page: 1,
+            last_page: 1
+        },
+        created() {
+            this.getContents();
+        },
+        methods: {
+            getContents() {
+                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=10&fields[article]=id,category,title,summary,created_at,img&page=' + this.page)
+                    .then(data => {
+                        this.items = data.data.data.contents.data
+                        this.last_page = data.data.data.contents.last_page
+                    }).then(() => {
+                        if (this.page == 1) {
+                            $("#page").bootstrapPaginator({
+                                bootstrapMajorVersion: 3, //对应的bootstrap版本
+                                currentPage: this.page, //当前页数
+                                numberOfPages: 10, //每次显示页数
+                                totalPages: this.last_page, //总页数
+                                shouldShowPage: true, //是否显示该按钮
+                                useBootstrapTooltip: false,
+                                onPageClicked: (event, originalEvent, type, page) => {
+                                    this.page = page;
+                                    this.getContents();
+                                }
+                            });
+                        }
+                    })
+            },
+            view(item) {
+                // location.href = 'newsDetails.html?id=' + item.id
+            }
+        }
+    })
+</script>
+
+</html>
