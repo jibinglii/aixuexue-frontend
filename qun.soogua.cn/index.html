@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> 
              </button>
-                <a href="#page-top" class="navbar-brand">
+                <a href="index.html" class="navbar-brand">
                     <span></span> 搜瓜·群盟
                 </a>
             </div>
@@ -45,7 +45,7 @@
                         <a class="page-scroll" href="#case">行业案例</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#aboutus">联系我们</a>
+                        <a class="page-scroll" href="#footer">联系我们</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#entering">免费入驻</a>
@@ -80,8 +80,8 @@
                     </h2>
                     <span>——百货商店之父·John Wanamaker</span>
                     <p>立足互联网社群整合推广的我们，利用深度学习下的智能匹配投放，结合数据完成最精准有效的靶向营销。 </p>
-                    <p>广告投放内容多元化，渠道多维化，反馈立体化，过程模块化，让您的每一笔营销预算都物有所值。 </p>
-                    <p>全行业全渠道社群深度运营，让广告主和流量主之间的壁垒彻底被打穿，联动营销、身份转换、创意定制、全案推广——最专业的的模式，最锋利的推广。</p>
+                    <p class="mobile_p">广告投放内容多元化，渠道多维化，反馈立体化，过程模块化，让您的每一笔营销预算都物有所值。 </p>
+                    <p class="mobile_p">全行业全渠道社群深度运营，让广告主和流量主之间的壁垒彻底被打穿，联动营销、身份转换、创意定制、全案推广——最专业的的模式，最锋利的推广。</p>
                 </div>
             </div>
         </div>
@@ -166,7 +166,7 @@
                     <p>400+母婴 社区 商超会员群投放</p>
                     <p>20w+受众</p>
                     <p>1w+打开</p>
-                    <span>“效果拔群，成功加薪”</span>
+                    <span>“精准打击，成功打入三四线市场 ”</span>
                 </div>
                 <div class="col-lg-3 col-md-3 col-xs-6">
                     <h3>法国娇韵诗</h3>
@@ -174,7 +174,7 @@
                     <p>“哇，水被我控住了！” </p>
                     <p>全方位流量助推</p>
                     <p>30w+参与人数</p>
-                    <span>“效果拔群，成功加薪”</span>
+                    <span>“非常给力的kol助推，打造出了一个全网爆款”</span>
                 </div>
                 <div class="col-lg-3 col-md-3 col-xs-6">
                     <h3>美增教育</h3>
@@ -182,7 +182,7 @@
                     <p>社群口碑引流</p>
                     <p>成功转化2w+用户</p>
                     <p>成功融资3500w</p>
-                    <span>“效果拔群，成功加薪”</span>
+                    <span>“多维度投放，获客成本低，用户质量高”</span>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
             </div>
         </div>
     </section>
-    <footer id="footer" class="aboutus">
+    <footer id="footer">
         <div class="footer-top overlay-2 section-back-image-2" data-background="">
             <div class="auto-container">
                 <div class="row">
@@ -242,11 +242,11 @@
                         <div class="footer-section-title col-12 p-0">
                             <h3>搜瓜动态</h3>
                         </div>
-                        <ul class="quick-link-list">
-                            <li><a href="#">公告 | 新版搜瓜即将和大家见面 敬请期待！</a></li>
-                            <!-- <li><a href="#">i黑马 | 搜瓜年交易额达300亿 需更多的分销商</a></li> -->
-                            <li><a href="#">公告 | 新增更多游戏平台项目 欢迎大家多多了解</a></li>
-                            <li><a href="news.html" class="more">更多内容</a></li>
+                        <ul class="quick-link-list" id="app" v-cloak>
+                            <li v-for="item in items" :key="item.id">
+                                <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
+                                <li><a href="news.html" class="more">更多内容</a></li>
+                            </li>
                         </ul>
 
                     </div>
@@ -287,6 +287,27 @@
                 mainNav.classList.remove('mainNav-bg');
             }
         }
+    </script>
+    <script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
+    <script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                items: []
+            },
+            created() {
+                this.getContents()
+            },
+            methods: {
+                getContents() {
+                    axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                        this.items = data.data.data.contents.data
+                        console.log(data.data.data.contents)
+                    })
+                }
+            }
+        })
     </script>
 </body>
 
