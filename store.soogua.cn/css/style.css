@@ -323,12 +323,12 @@ fieldset {
 
 .owl-theme.home-slides .owl-dot:hover {
     background: #333;
-    color: #ffff;
+    color: #fff;
 }
 
 .owl-theme.home-slides .owl-dot.active {
     background: #333;
-    color: #ffff;
+    color: #fff;
 }
 
 .owl-theme.home-slides .owl-dots {
@@ -829,6 +829,10 @@ footer {
     border-bottom: solid 1px #494F55;
 }
 
+footer .auto-container .row {
+    align-items: flex-start;
+}
+
 .footer-section-title h3 {
     color: #fff;
     font-size: 0.7rem;
@@ -959,6 +963,7 @@ footer .copyright {
 .copyright-text a {
     color: white;
 }
-[v-cloak]{
+
+[v-cloak] {
     display: none;
 }

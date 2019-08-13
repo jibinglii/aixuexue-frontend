@@ -28,9 +28,9 @@
     <header class="main-header header-1">
         <div class="auto-container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 logo_img col-xs-8">
+                <a class="col-lg-6 col-md-6 logo_img col-xs-8" href="index.html">
                     <img src="picture/logo.png" />
-                </div>
+                </a>
                 <div class="col-lg-6 col-md-6 col-xs-6 d-lg-block d-md-none d-sm-none d-none ">
                     <nav class="navbar navbar-expand-lg justify-content-left">
                         <ul class="navbar-nav">
@@ -100,7 +100,7 @@
                             <h3>西安学学信息技术有限公司</h3>
                         </div>
                         <ul class="quick-link-list">
-                            <li>网址：<a href="http://www.aixuexue.com" target="_blank">www.aixuexue.com</a></li>
+                            <li>网址：<a href="https://store.soogua.cn/" target="_blank">store.soogua.cn</a></li>
                             <li>电话：400-801-5153</li>
                             <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                         </ul>
@@ -135,8 +135,8 @@
             <div class="auto-container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
-                        <p>西安学学信息技术有限公司 © 2010-2019 soogua.cn 版权所有
-                            <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-3</a>
+                        <p>西安学学信息技术有限公司 © 2018-2019 store.soogua.cn 版权所有
+                            <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-1</a>
                         </p>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
         },
         methods: {
             getContents() {
-                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=2&fields[article]=id,category,title,summary,created_at,img').then(data => {
                     this.items = data.data.data.contents.data
                 })
             }
@@ -192,7 +192,7 @@
         },
         methods: {
             getContents() {
-                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=25&size=10&fields[article]=id,category,title,summary,created_at,img&page=' + this.page)
+                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=10&fields[article]=id,category,title,summary,created_at,img&page=' + this.page)
                     .then(data => {
                         this.items = data.data.data.contents.data
                         this.last_page = data.data.data.contents.last_page

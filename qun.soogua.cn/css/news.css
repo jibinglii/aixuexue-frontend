@@ -14,12 +14,12 @@ li {
 }
 
 #mainNav {
-    background: #373D44;
+    /* background: #373D44; */
 }
 
 .navbar>.container .navbar-brand,
 .navbar>.container-fluid .navbar-brand {
-    margin-left: -50px;
+    margin-left: -30px;
 }
 
 .list {
@@ -93,7 +93,7 @@ li {
 .source {
     background: #F2F2F2;
     padding: 15px 20px;
-    margin-top: 56px;
+    margin-top: 80px;
 }
 
 .source .container {
@@ -115,12 +115,11 @@ li {
 
 .newdetail {
     padding: 25px 0;
-    min-height: 593px;
 }
 
 .newdetail .row {
     align-items: flex-start;
-    padding: 0 18px;
+    padding: 0 10px;
 }
 
 .newdetail .left h1 {
@@ -191,7 +190,7 @@ li {
     content: '';
     position: absolute;
     left: -9px;
-    top: 3px;
+    top: 7px;
     width: 2px;
     height: 15px;
     border-left: solid 4px #4D96F3;
@@ -209,11 +208,12 @@ li {
     -o-text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
-    font-size: 0.16rem;
+    font-size: 0.7rem;
+    line-height: 1;
 }
 
 .right ul li span {
-    font-size: 0.13rem;
+    font-size: 0.6rem;
     color: #999;
 }
 

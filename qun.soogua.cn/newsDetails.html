@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" />
-    <title>soogua官方网站-新闻列表</title>
+    <title>搜瓜·群盟官方网站-新闻列表</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->
@@ -14,36 +14,40 @@
 </head>
 
 <body>
-    <!-- 导航 -->
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header page-scroll col-lg-7 col-md-7">
+            <div class="navbar-header page-scroll col-lg-6 col-md-6">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> 
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> 
              </button>
-                <a href="index.html" class="navbar-brand"><img src="images/logo.png" class="img-responsive" alt=""></a>
+                <a href="index.html" class="navbar-brand">
+                    <span></span> 搜瓜·群盟
+                </a>
             </div>
 
-            <div class="collapse navbar-collapse col-lg-5 col-md-5" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse col-lg-6 col-md-6" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li class="active">
-                        <a class="page-scroll" href="index.html?#index">下载</a>
+                        <a class="page-scroll" href="index.html?#index">关于群盟</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="index.html?#introduct">介绍</a>
+                        <a class="page-scroll" href="index.html?#solution">解决方案</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="index.html?#aboutus">关于</a>
+                        <a class="page-scroll" href="index.html?#case">行业案例</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="index.html?#aboutus">联系</a>
+                        <a class="page-scroll" href="index.html?#footer">联系我们</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html?#entering">免费入驻</a>
                     </li>
                 </ul>
             </div>
@@ -51,32 +55,32 @@
         <!-- /.container-fluid -->
     </nav>
 
-
     <div class="source">
         <div class="container">
-            <p>搜瓜动态</p>
+            <p>媒体报道</p>
+            <a href="news.html"><img src="picture/pre.png" alt=""> 返回列表</a>
         </div>
     </div>
-    <div class="container">
-        <ul class="list" id="content" v-cloak>
-            <li v-for="item in items" :key="item.id" @click="view(item)">
-                <div class="img">
-                    <img :src="item.img" alt="">
-                </div>
-                <div>
-                    <h4>{{ item.title }}</h4>
-                    <p>
-                        {{ item.summary }}
-                    </p>
-                    <a :href="'newsDetails.html?id=' + item.id">阅读全文</a>
-                </div>
-            </li>
-        </ul>
-        <!-- navigation -->
-        <div class="navigation">
-            <ul id="page"></ul>
-        </div>
+    <div class="container newdetail" id="content" v-cloak>
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-xs-12 left">
+                <h3 class="title">{{ content.title }}</h3>
+                <span>发布于 {{ content.created_at }}</span>
+                <div class="content" v-html="content.content"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 right">
+                <p class="title">最新资讯</p>
+                <ul>
+                    <li v-for="item in zixun">
+                        <a :href="'newsDetails.html?id=' + item.id">
+                            <p>{{ item.title }}</p>
 
+                        </a>
+                        <span>发布于 {{ item.created_at }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <footer id="foot">
@@ -88,7 +92,7 @@
                             <h3>西安学学信息技术有限公司</h3>
                         </div>
                         <ul class="quick-link-list">
-                            <li>网址：<a href="http://soogua.aixuexue.com">soogua.aixuexue.com</a></li>
+                            <li>网址：https://soogua.aixuexue.com/</li>
                             <li>电话：400-801-5153</li>
                             <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                         </ul>
@@ -101,7 +105,7 @@
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
                         <dl>
-                            <dt><img src="picture/weibo.png" class=""/></dt>
+                            <dt><img src="picture/weibo.jpg" class=""/></dt>
                             <dd>微博公众号</dd>
                         </dl>
                     </div>
@@ -149,6 +153,16 @@
     }
 </script>
 <script>
+    window.onscroll = function() {
+        var mainNav = document.getElementById('mainNav');
+        if (window.pageYOffset >= 70) {
+            mainNav.classList.add('mainNav-bg');
+        } else {
+            mainNav.classList.remove('mainNav-bg');
+        }
+    }
+</script>
+<script>
     var vm = new Vue({
         el: '#app',
         data: {
@@ -164,42 +178,45 @@
                 })
             }
         }
-    });
+    })
     var content = new Vue({
         el: '#content',
         data: {
-            items: [],
-            page: 1,
-            last_page: 1
+            content: {},
+            zixun: []
         },
         created() {
-            this.getContents();
+            this.getContent(this.getQueryParam('id'))
+            this.getZixuan()
         },
         methods: {
-            getContents() {
-                axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=10&fields[article]=id,category,title,summary,created_at,img&page=' + this.page)
-                    .then(data => {
-                        this.items = data.data.data.contents.data
-                        this.last_page = data.data.data.contents.last_page
-                    }).then(() => {
-                        if (this.page == 1) {
-                            $("#page").bootstrapPaginator({
-                                bootstrapMajorVersion: 3, //对应的bootstrap版本
-                                currentPage: this.page, //当前页数
-                                numberOfPages: 10, //每次显示页数
-                                totalPages: this.last_page, //总页数
-                                shouldShowPage: true, //是否显示该按钮
-                                useBootstrapTooltip: false,
-                                onPageClicked: (event, originalEvent, type, page) => {
-                                    this.page = page;
-                                    this.getContents();
-                                }
-                            });
-                        }
-                    })
+            getContent(id) {
+                axios.get('https://soogua.aixuexue.net/api/v1/articles/' + id).then(data => {
+                    this.content = data.data.data
+                    document.title = this.content.title
+                })
             },
-            view(item) {
-                // location.href = 'newsDetails.html?id=' + item.id
+            getQueryParam(key) {
+                if (!key) {
+                    return false;
+                }
+                var value = '';
+                var paramStr = window.location.search ? window.location.search.substr(1) : '';
+
+                if (paramStr) {
+                    paramStr.split('&').forEach(function(param) {
+                        var arr = param.split('=');
+                        if (arr[0] == key) {
+                            value = arr[1];
+                        }
+                    });
+                }
+                return value;
+            },
+            getZixuan() {
+                axios.get('https://soogua.aixuexue.net/api/v1/articles?category=28&size=5&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                    this.zixun = data.data.data.contents.data
+                })
             }
         }
     })
