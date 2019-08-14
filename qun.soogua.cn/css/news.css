@@ -11,6 +11,11 @@ body {
 ul,
 li {
     list-style: none;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-top: 0;
 }
 
 #mainNav {
@@ -19,7 +24,7 @@ li {
 
 .navbar>.container .navbar-brand,
 .navbar>.container-fluid .navbar-brand {
-    margin-left: -30px;
+    /* margin-left: -30px; */
 }
 
 .list {
@@ -50,7 +55,12 @@ li {
 
 .list li p {
     font-size: .15rem;
-    color: #999
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .list li a {
@@ -115,6 +125,7 @@ li {
 
 .newdetail {
     padding: 25px 0;
+    min-height: 590px;
 }
 
 .newdetail .row {
@@ -135,6 +146,11 @@ li {
     /* margin: 0; */
 }
 
+.newdetail .left .date {
+    margin-bottom: 15px;
+    display: block;
+}
+
 .newdetail .left h4 {
     font-size: .16rem;
     margin: 0;
@@ -142,13 +158,12 @@ li {
 }
 
 .newdetail .left span {
-    font-size: 0.14rem;
+    font-size: 0.16rem;
     color: #999;
 }
 
 .newdetail .left p {
-    font-size: 0.15rem;
-    margin: 15px 0;
+    font-size: 0.16rem;
     color: #666;
 }
 
@@ -190,7 +205,7 @@ li {
     content: '';
     position: absolute;
     left: -9px;
-    top: 7px;
+    top: .07rem;
     width: 2px;
     height: 15px;
     border-left: solid 4px #4D96F3;
@@ -208,30 +223,21 @@ li {
     -o-text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.16rem;
     line-height: 1;
 }
 
 .right ul li span {
-    font-size: 0.6rem;
+    font-size: 0.14rem;
     color: #999;
-}
-
-#foot {
-    background: #373D44;
-    position: inherit;
 }
 
 #foot h3 {
     margin-top: 0;
 }
 
-.copyright .row {
-    margin: 0;
-}
-
-.copyright .row p {
-    margin-bottom: 0;
+.copyright-text p {
+    font-size: .14rem;
 }
 
 @media screen and (max-width:768px) {
@@ -247,7 +253,7 @@ li {
     }
     .list {
         min-height: 0;
-        padding: 40px 20px;
+        padding: 0px 20px;
     }
     .list li {
         width: 100%;
@@ -266,7 +272,8 @@ li {
         margin-left: 0;
     }
     .source {
-        margin-top: 52px;
+        margin: 52px 0 30px 0;
+        padding: 7px 20px;
     }
     .source .container {
         padding: 0;
@@ -279,6 +286,18 @@ li {
     }
     .widget {
         display: none;
+    }
+    .newdetail .left span {
+        font-size: .7rem;
+    }
+    .right ul li p {
+        font-size: .65rem;
+    }
+    .right ul li span {
+        font-size: .5rem;
+    }
+    .right .title::before {
+        top: .4rem;
     }
     footer .copyright {
         display: block;
