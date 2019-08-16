@@ -18,15 +18,6 @@ h3 {
     margin-top: 0;
 }
 
-#mainNav {
-    /* background: #373D44; */
-}
-
-.navbar>.container .navbar-brand,
-.navbar>.container-fluid .navbar-brand {
-    /* margin-left: -30px; */
-}
-
 .list {
     padding: 40px 0;
     min-height: 530px;
@@ -236,10 +227,6 @@ h3 {
     margin-top: 0;
 }
 
-.copyright-text p {
-    font-size: .14rem;
-}
-
 @media screen and (max-width:768px) {
     #mainNav {
         border-color: #fff;
@@ -260,6 +247,9 @@ h3 {
     }
     .list li img {
         width: 70px;
+    }
+    .list li a {
+        font-size: .65rem;
     }
     .list li p {
         overflow: hidden;
@@ -291,13 +281,16 @@ h3 {
         font-size: .7rem;
     }
     .right ul li p {
-        font-size: .65rem;
+        font-size: .75rem;
     }
     .right ul li span {
-        font-size: .5rem;
+        font-size: .6rem;
     }
     .right .title::before {
         top: .4rem;
+    }
+    .right .title {
+        margin-top: 25px;
     }
     footer .copyright {
         display: block;
