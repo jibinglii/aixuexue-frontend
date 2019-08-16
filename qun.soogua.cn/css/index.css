@@ -213,6 +213,9 @@ hr {
         font-size: .75rem;
         line-height: 1.2;
     }
+    .banner span {
+        font-size: .65rem;
+    }
     hr {
         margin: auto;
     }
@@ -348,6 +351,10 @@ hr {
     }
     .solution .top p {
         font-size: .75rem;
+    }
+    .solution span,
+    .solution .advange2 .col-lg-4 span {
+        font-size: .65rem;
     }
     .solution .bg {
         height: 6.1rem;
@@ -500,8 +507,12 @@ hr {
     h2 {
         font-size: 1rem;
     }
-    p {
+    p,
+    .entering p {
         font-size: .75rem;
+    }
+    span {
+        font-size: .65rem;
     }
     .entering {
         text-align: center;
@@ -663,7 +674,7 @@ footer .copyright {
     }
     .quick-link-list li,
     .footer-widget ul.quick-link-list li a {
-        font-size: .6rem;
+        font-size: .7rem;
     }
     .footer-widget.widget {
         margin-top: 45px;
