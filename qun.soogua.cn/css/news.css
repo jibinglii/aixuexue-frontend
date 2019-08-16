@@ -237,7 +237,7 @@ h3 {
 }
 
 .copyright-text p {
-    font-size: .14rem;
+    font-size: 14px;
 }
 
 @media screen and (max-width:768px) {
