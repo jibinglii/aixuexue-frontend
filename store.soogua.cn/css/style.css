@@ -282,7 +282,7 @@ fieldset {
     .header-1 .navbar-nav .active .nav-link:after {
         right: 17px;
     }
-    .advant-section .advant .top b {
+    .education-section .advant .top b {
         font-size: 33px;
     }
 }
@@ -381,9 +381,9 @@ fieldset {
 }
 
 
-/* advant-section */
+/* education-section */
 
-.advant-section .advant.col-lg-4 {
+.education-section .advant.col-lg-4 {
     flex: 0 0 32%;
     height: 207px;
     border: solid 1px #EDEDED;
@@ -391,49 +391,49 @@ fieldset {
     padding: 0 30px;
 }
 
-.advant-section .auto-container .row {
+.education-section .auto-container .row {
     justify-content: space-between;
 }
 
-.advant-section .advant .top {
+.education-section .advant .top {
     padding: 25px 0;
     display: flex;
     align-items: center;
 }
 
-.advant-section .advant .top img {
+.education-section .advant .top img {
     width: 65px;
 }
 
-.advant-section .advant .top b {
+.education-section .advant .top b {
     padding-left: 10px;
     font-size: 1.1rem;
     font-weight: 500;
     color: #333;
 }
 
-.advant-section .advant p {
+.education-section .advant p {
     font-size: 16px;
     line-height: 2;
 }
 
-.advant-section .adv_bottom {
+.education-section .adv_bottom {
     margin-bottom: 5px;
 }
 
-.advant-section .adv_bottom .desc {
+.education-section .adv_bottom .desc {
     padding: 0 145px;
 }
 
-.advant-section .adv_bottom h3 {
+.education-section .adv_bottom h3 {
     font-size: 0.9rem;
 }
 
-.advant-section .adv_bottom p {
+.education-section .adv_bottom p {
     font-size: 0.5rem;
 }
 
-.advant-section .adv_bottom img,
+.education-section .adv_bottom img,
 .store img,
 .soogua img {
     width: 350px;
@@ -444,70 +444,70 @@ fieldset {
 }
 
 @media screen and (max-width: 768px) {
-    .advant-section {
+    .education-section {
         margin-top: 30px;
     }
-    .advant-section .advant.col-lg-4 {
+    .education-section .advant.col-lg-4 {
         flex: 0 0 90%;
         height: 150px;
         border: solid 1px #EDEDED;
         margin: 15px auto 0;
         padding: 0 30px;
     }
-    .advant-section .advant .top img {
+    .education-section .advant .top img {
         width: 35px;
     }
-    .advant-section .advant .top {
+    .education-section .advant .top {
         padding: 20px 0;
     }
-    .advant-section .advant .top b {
+    .education-section .advant .top b {
         font-size: 1.1rem;
     }
-    .advant-section .advant p {
+    .education-section .advant p {
         font-size: 0.7rem;
     }
-    .advant-section .adv_bottom {
+    .education-section .adv_bottom {
         position: relative;
         height: 580px;
     }
-    .advant-section .adv_bottom .desc {
+    .education-section .adv_bottom .desc {
         padding: 0;
         position: absolute;
         top: 260px;
     }
-    .advant-section .adv_bottom .img {
+    .education-section .adv_bottom .img {
         position: absolute;
         top: 10px;
     }
-    .advant-section .adv_bottom img {
+    .education-section .adv_bottom img {
         width: 240px;
     }
-    .advant-section .adv_bottom .col-xs-12 {
+    .education-section .adv_bottom .col-xs-12 {
         text-align: center;
     }
-    .advant-section .adv_bottom h3 {
+    .education-section .adv_bottom h3 {
         font-size: 0.9rem;
     }
-    .advant-section .adv_bottom p {
+    .education-section .adv_bottom p {
         font-size: 0.6rem;
     }
 }
 
 @media (min-width:769px) and (max-width: 992px) {
-    .advant-section .advant .top b {
+    .education-section .advant .top b {
         font-size: 26px;
     }
-    .advant-section .advant p {
+    .education-section .advant p {
         font-size: 17px;
         line-height: 1.8;
     }
-    .advant-section .adv_bottom .desc {
+    .education-section .adv_bottom .desc {
         padding: 0 70px;
     }
 }
 
 @media (min-width:992px) and (max-width: 1067px) {
-    .advant-section .adv_bottom .desc {
+    .education-section .adv_bottom .desc {
         padding: 0 80px;
     }
 }
@@ -667,7 +667,7 @@ fieldset {
 
 .store .auto-container,
 .soogua .auto-container,
-.advant-section .auto-container {
+.education-section .auto-container {
     padding: 30px 50px;
 }
 
@@ -718,7 +718,7 @@ fieldset {
 @media screen and (max-width:768px) {
     .store .auto-container,
     .soogua .auto-container,
-    .advant-section .auto-container {
+    .education-section .auto-container {
         padding: 10px 20px;
     }
     .store .auto-container .row,
