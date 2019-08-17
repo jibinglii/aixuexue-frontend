@@ -568,3 +568,7 @@ footer .copyright a {
         margin-left: -4px !important;
     }
 }
+
+[v-cloak] {
+    display: none;
+}

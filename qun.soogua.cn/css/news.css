@@ -275,7 +275,7 @@ h3 {
         font-size: .75rem;
     }
     .widget {
-        display: none;
+        /* display: none; */
     }
     .newdetail .left span {
         font-size: .7rem;
@@ -295,7 +295,7 @@ h3 {
     }
     footer .copyright {
         display: block;
-        padding: 44px 0 10px;
+        padding: 5px 0 10px;
     }
     footer .copyright-text p {
         padding: 0 20px;

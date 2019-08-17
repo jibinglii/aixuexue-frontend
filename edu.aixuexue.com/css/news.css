@@ -24,12 +24,7 @@
     object-fit: cover;
 }
 
-.list li h4 {
-    font-size: 0.7rem;
-}
-
 .list li p {
-    font-size: 0.5rem;
     color: #999;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -39,7 +34,6 @@
 }
 
 .list li a {
-    font-size: 0.5rem;
     color: #4D96F3;
 }
 
@@ -71,6 +65,7 @@
 .source {
     background: #F2F2F2;
     padding: 10px 20px;
+    margin-top: 80px;
 }
 
 .source .auto-container {
@@ -81,7 +76,7 @@
 }
 
 .source p {
-    font-size: .8rem;
+    font-size: 1.1rem;
 }
 
 .source a {
@@ -98,24 +93,18 @@
     padding: 0 16px;
 }
 
-.newdetail .left h3 {
-    font-size: 0.7rem;
-    /* margin: 0; */
-}
-
 .newdetail .left h4 {
-    font-size: 0.5rem;
     margin: 0;
     line-height: 2;
 }
 
 .newdetail .left span {
-    font-size: 0.6rem;
     color: #999;
+    padding-bottom: .5rem;
+    display: block;
 }
 
 .newdetail .left p {
-    font-size: 0.5rem;
     margin: 15px 0;
 }
 
@@ -135,7 +124,6 @@
 
 .newdetail .left .navigation ul a {
     color: #4D96F3;
-    font-size: .5rem;
     border-radius: 3px;
     border: solid 1px #4D96F3;
     padding: 4px 10px;
@@ -175,15 +163,23 @@
     -o-text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
-    font-size: .5rem;
 }
 
 .right ul li span {
-    font-size: 0.4rem;
     color: #999;
+    font-size: .8rem;
 }
 
 @media screen and (max-width:768px) {
+    .source {
+        margin-top: 46px;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    p {
+        font-size: .95rem;
+    }
     .list li {
         width: 100%;
     }
@@ -222,8 +218,4 @@
 
 #content.newdetail img {
     max-width: 100%;
-}
-
-[v-cloak] {
-    display: none;
 }
