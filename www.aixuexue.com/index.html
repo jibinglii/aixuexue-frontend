@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="bitbug_favicon.ico" />
+    <title>学学官网</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- icofont icon -->
+    <link rel="stylesheet" href="css/icofont.css">
+    <!--- meanmenu Css-->
+    <link rel="stylesheet" href="css/meanmenu.min.css" media="all" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!--- owl carousel Css-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+    <div class="index">
+        <!-- 导航 -->
+        <header class="main-header header-1">
+            <div class="auto-container">
+                <div class="row">
+                    <a class="col-lg-6 col-md-6 logo_img col-xs-8" href="index.html">
+                        <img src="picture/logo.png" />
+                    </a>
+                    <div class="col-lg-6 col-md-6 col-xs-6 d-lg-block d-md-none d-sm-none d-none ">
+                        <nav class="navbar navbar-expand-lg justify-content-left">
+                            <ul class="navbar-nav">
+                                <li class="active dropdown"><a href="index.html" class="nav-link">首页</a></li>
+                                <li class="dropdown"><a href="#store" class="nav-link">产品 </a></li>
+                                <li class="dropdown"><a href="#serving" class="nav-link">服务</a></li>
+                                <li class="dropdown"><a href="#aboutus" class="nav-link">关于</a></li>
+                                <li class="dropdown"><a href="#support" class="nav-link">合作</a></li>
+                                <li class="dropdown"><a href="#foot" class="nav-link">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- mobile -->
+                    <div class="mobile-menu-area d-lg-none d-md-block d-sm-block d-block col-xs-8">
+                        <div class="col-lg-6">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="navbar-nav">
+                                        <li><a href="index.html">首页</a></li>
+                                        <li><a href="#store">产品</a></li>
+                                        <li><a href="#serving">服务</a></li>
+                                        <li><a href="#aboutus">关于</a></li>
+                                        <li><a href="#support">合作</a></li>
+                                        <li><a href="#foot">联系</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- banner -->
+        <section class="slider-section">
+            <div class="home-slides owl-carousel owl-theme ">
+                <div class="home-single-slide" data-background="picture/banner_1.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_2.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_3.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_4.png"></div>
+        </section>
+        <!-- mobile -->
+        <section class="slider-section slider-mobile">
+            <div class="home-slides owl-carousel owl-theme ">
+                <div class="home-single-slide" data-background="picture/banner_1.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_2.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_3.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_4.png"></div>
+        </section>
+        <!-- banner  end  -->
+
+        <section class="marquee_news">
+            <div class="marquee">
+                <div class="marquee_box">
+                    <ul class="marquee_list" :class="{marquee_top:animate}">
+                        <li v-for="(item, index) in items">
+                            <span> {{ item.article_cate.category }} | {{ item.title }}</span>
+                            <span> {{item.created_at.split(' ')[0]}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="soogua" id="soogua">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-xs-12 desc desc-l">
+                    <h3 class="top">
+                        SOOGUA 社交 App
+                    </h3>
+                    <span>一个高粘性，高交流频次，高价值的新型社交综合体。</span>
+                    <p>
+                        搜瓜，一款基于大数据匹配陌生人交友、兴趣导向社群、社交型网络陪玩以及虚拟商品\社群人脉\自媒体资源\虚拟资源变现的整合式社交平台APP。
+                    </p>
+                    <a href="">去看看 >></a>
+
+                </div>
+                <div class="col-lg-7 col-md-7 col-xs-12 img">
+                    <img src="picture/soogua_r.png" alt="" class="img-responsive pc">
+                    <img src="picture/mobile_1.png" alt="" class="img-responsive mobile">
+                </div>
+            </div>
+        </section>
+        <section class="store odd" id="store">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-xs-12 img">
+                    <img src="picture/store_l.png" alt="" class="img-responsive pc">
+                    <img src="picture/mobile_2.png" alt="" class="img-responsive mobile">
+                </div>
+                <div class="col-lg-5 col-md-5 col-xs-12 desc desc-r">
+                    <h3 class="top">
+                        搜瓜微商城
+                    </h3>
+                    <span>带货新势力，电商新玩法。</span>
+                    <p>
+                        搜瓜微商城，基于搜瓜社交的虚拟资产变现平台。内容涵盖社交圈、自媒体、游戏账号、互联网服务等。依托“内容+社交+交换”，全案式营销推广与社群的分销，让虚拟资产安全变现。
+
+                    </p>
+                    <a href="">去看看 >></a>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="qun" id="qun">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-xs-12 desc desc-l">
+                    <h3 class="top">
+                        SOOGUA 社交 App
+                    </h3>
+                    <span>一个高粘性，高交流频次，高价值的新型社交综合体。</span>
+                    <p>
+                        搜瓜，一款基于大数据匹配陌生人交友、兴趣导向社群、社交型网络陪玩以及虚拟商品\社群人脉\自媒体资源\虚拟资源变现的整合式社交平台APP。
+                    </p>
+                    <a href="">去看看 >></a>
+
+                </div>
+                <div class="col-lg-7 col-md-7 col-xs-12 img">
+                    <img src="picture/qun_r.png" alt="" class="img-responsive pc">
+                    <img src="picture/mobile_3.png" alt="" class="img-responsive mobile">
+                </div>
+            </div>
+        </section>
+        <section class="axx odd" id="axx">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-xs-12 img">
+                    <img src="picture/axx_l.png" alt="" class="img-responsive pc">
+                    <img src="picture/mobile_4.png" alt="" class="img-responsive mobile">
+                </div>
+                <div class="col-lg-5 col-md-5 col-xs-12 desc desc-r">
+                    <h3 class="top">
+                        搜瓜微商城
+                    </h3>
+                    <span>带货新势力，电商新玩法。</span>
+                    <p>
+                        搜瓜微商城，基于搜瓜社交的虚拟资产变现平台。内容涵盖社交圈、自媒体、游戏账号、互联网服务等。依托“内容+社交+交换”，全案式营销推广与社群的分销，让虚拟资产安全变现。
+
+                    </p>
+                    <a href="">去看看 >></a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="product" id="serving">
+            <div class="section-title">
+                <h2>产品与服务</h2>
+            </div>
+            <div class="auto-container">
+                <div class="row">
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_1.png" alt=""></dt>
+                        <dd>
+                            <h5>搜瓜精选商城</h5>
+                        </dd>
+                        <dd>好货优选</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_2.png" alt=""></dt>
+                        <dd>
+                            <h5>搜瓜分期</h5>
+                        </dd>
+                        <dd>一键轻松分期</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_3.png" alt=""></dt>
+                        <dd>
+                            <h5>搜瓜担保</h5>
+                        </dd>
+                        <dd>最专业·最效率·最放心</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_4.png" alt=""></dt>
+                        <dd>
+                            <h5>社群营销</h5>
+                        </dd>
+                        <dd>你的人脉，都能刷出钱啦</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_5.png" alt=""></dt>
+                        <dd>
+                            <h5>智能推广</h5>
+                        </dd>
+                        <dd>线上批量推广工具</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_6.png" alt=""></dt>
+                        <dd>
+                            <h5>智能论文</h5>
+                        </dd>
+                        <dd>一键降重，学而无忧</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_7.png" alt=""></dt>
+                        <dd>
+                            <h5>视频KOL</h5>
+                        </dd>
+                        <dd>做有态度的视频</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_8.png" alt=""></dt>
+                        <dd>
+                            <h5>即时通讯开发</h5>
+                        </dd>
+                        <dd>最社交的通讯</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_9.png" alt=""></dt>
+                        <dd>
+                            <h5>数据建模</h5>
+                        </dd>
+                        <dd>分析与应用一站解决</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_10.png" alt=""></dt>
+                        <dd>
+                            <h5>超级签名</h5>
+                        </dd>
+                        <dd>一次认证，全程无忧</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_11.png" alt=""></dt>
+                        <dd>
+                            <h5>语义识别</h5>
+                        </dd>
+                        <dd>基于深度学习的识别系统</dd>
+                    </dl>
+                    <dl class="col-lg-3 col-md-3 col-xs-6">
+                        <dt><img src="picture/pro_12.png" alt=""></dt>
+                        <dd>
+                            <h5>视频直播开发</h5>
+                        </dd>
+                        <dd>稳定高速 简单轻便</dd>
+                    </dl>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="aboutus" id="aboutus">
+            <div class="about">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-12">
+                            <img src="picture/address.png" alt="" class="">
+                        </div>
+                        <div class="col-lg-5 col-xs-12">
+                            <div class="section-title">
+                                <h2>关于我们</h2>
+                            </div>
+                            <p class="text">
+                                西安学学信息技术有限公司，深耕互联网行业多年，涉及行业包括线上教育服务、大数据服务、社群运营服务、人工智能及互联网产品开发与运营等，拥有专业的研发团队、全面的渠道资源以及丰富的行业经验，期待与您的合作！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="support" id="support">
+            <div class="section-title">
+                <h2>合作与支持</h2>
+            </div>
+            <div class="auto-container">
+                <img src="picture/ali.png" alt="" class="">
+                <img src="picture/bdy.png" alt="" class="">
+                <img src="picture/hx.png" alt="" class="">
+                <img src="picture/lian.png" alt="" class="">
+                <img src="picture/zfb.png" alt="" class="">
+                <img src="picture/wx.png" alt="" class="">
+                <img src="picture/kd.png" alt="" class="">
+                <img src="picture/fy.png" alt="" class="">
+                <img src="picture/253.png" alt="" class="">
+                <img src="picture/EA.png" alt="" class="">
+            </div>
+        </section>
+        <section class="news" id="app" v-cloak>
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12 col-offset-md-1">
+                        <div class="section-title">
+                            <h2>学学动态</h2>
+                            <a href="news.html">查看更多</a>
+                        </div>
+                        <ul class="list">
+                            <li v-for="(item, index) in items" :key="item.id" @click="changeLi(index)" :class="{textColor:active==index}">
+                                <a @click="newClick(item.id)"><i></i><span>{{item.created_at.split(' ')[0]}}</span> {{ item.article_cate.category }} | {{ item.title }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-xs-12">
+                        <img :src="content.img" alt="">
+                        <h6>{{content.title}}</h6>
+                        <p>{{content.summary}}</p>
+                        <div class="date">
+                            <span>{{content.created_at}}</span>
+                            <a :href="'/newsDetails.html?id=' + content.id">阅读全文</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="foot">
+            <div class="footer-top overlay-2 section-back-image-2" data-background="">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget info">
+                            <div class="footer-section-title col-12 p-0">
+                                <img src="picture/tel.png">
+                                <div>
+                                    <h3>400-801-5153</h3>
+                                    <span>周一至周日 8:00~18:00</span>
+                                </div>
+                            </div>
+                            <ul class="quick-link-list">
+                                <li>西安学学信息技术有限公司</li>
+                                <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
+                            <div class="footer-section-title col-12 p-0">
+                                <span>产品服务</span>
+                            </div>
+                            <ul class="quick-link-list">
+                                <li><a href="">搜瓜社交App</a></li>
+                                <li><a href="">搜瓜微商城</a></li>
+                                <li><a href="">搜瓜群盟</a></li>
+                                <li><a href="">爱学学教育系统</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget">
+                            <dl>
+                                <dt><img src="picture/qrcode.png" alt=""></dt>
+                                <dd>sougua</dd>
+                            </dl>
+                            <dl>
+                                <dt><img src="picture/nopublic.jpeg" alt=""></dt>
+                                <dd>soogua公众号</dd>
+                            </dl>
+                            <dl>
+                                <dt><img src="picture/weibo.jpg" alt=""></dt>
+                                <dd>soogua微博</dd>
+                            </dl>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 copyright-text">
+                            <p>西安学学信息技术有限公司 © 2018-2019 edu.aixuexue.com 版权所有
+                                <a href="http://www.beian.miit.gov.cn" target="_blank">陕ICP备18017596号-1</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+        <!-- Latest jQuery -->
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <!-- Latest compiled and minified Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- meanmenu min js  -->
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <!-- Sticky JS -->
+        <script src="js/jquery.sticky.js"></script>
+        <!-- owl-carousel min js  -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- scrolltopcontrol js -->
+        <script src="js/scrolltopcontrol.js"></script>
+        <!-- scripts js -->
+        <script src="js/scripts.js"></script>
+
+        <script src="https://libs.cdnjs.net/vue/2.6.10/vue.js"></script>
+        <script src="https://libs.cdnjs.net/axios/0.19.0-beta.1/axios.min.js"></script>
+        <script>
+            $(function() {
+                $('.navbar-nav li').click(function() {
+                    $(this).addClass('active').siblings().removeClass('active');
+                })
+            })
+        </script>
+        <script type="text/javascript">
+            const vm = new Vue({
+                el: ".marquee",
+                data: {
+                    animate: false,
+                    items: [],
+                    content: [],
+                },
+                created: function() {
+                    setInterval(this.showMarquee, 2000)
+                    this.getContents()
+                },
+                methods: {
+                    getContents() {
+                        axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=5&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                            this.items = data.data.data.contents.data
+                        })
+                    },
+                    showMarquee: function() {
+                        this.animate = true;
+                        setTimeout(() => {
+                            this.items.push(this.items[0]);
+                            this.items.shift();
+                            this.animate = false;
+                        }, 500)
+                    }
+                }
+            });
+            const content = new Vue({
+                el: "#app",
+                data: {
+                    items: [],
+                    content: [],
+                    active: 0,
+                },
+                created: function() {
+                    this.getContents()
+                },
+                methods: {
+                    getContents() {
+                        axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=5&fields[article]=id,category,title,summary,created_at,img').then(data => {
+                            this.items = data.data.data.contents.data
+                        })
+                    },
+                    newClick(id) {
+                        axios.get('https://soogua.aixuexue.net/api/v1/articles/' + id).then(data => {
+                            this.content = data.data.data
+                        })
+                    },
+                    //  点击改变文字颜色
+                    changeLi(index) {
+                        this.active = index;
+                    }
+
+                }
+            });
+        </script>
+
+</body>
+
+</html>
