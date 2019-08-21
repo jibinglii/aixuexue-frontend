@@ -69,17 +69,17 @@
         <section class="slider-section">
             <div class="home-slides owl-carousel owl-theme ">
                 <div class="home-single-slide" data-background="picture/banner_1.png"></div>
-                <div class="home-single-slide" data-background="picture/banner_2.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_2.jpg"></div>
                 <div class="home-single-slide" data-background="picture/banner_3.png"></div>
-                <div class="home-single-slide" data-background="picture/banner_4.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_4.jpg"></div>
         </section>
         <!-- mobile -->
         <section class="slider-section slider-mobile">
             <div class="home-slides owl-carousel owl-theme ">
                 <div class="home-single-slide" data-background="picture/banner_1.png"></div>
-                <div class="home-single-slide" data-background="picture/banner_2.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_2.jpg"></div>
                 <div class="home-single-slide" data-background="picture/banner_3.png"></div>
-                <div class="home-single-slide" data-background="picture/banner_4.png"></div>
+                <div class="home-single-slide" data-background="picture/banner_4.jpg"></div>
         </section>
         <!-- banner  end  -->
 
@@ -317,18 +317,18 @@
                             <a href="news.html">查看更多</a>
                         </div>
                         <ul class="list">
-                            <li v-for="(item, index) in items" :key="item.id" @click="changeLi(index)" :class="{textColor:active==index}">
-                                <a @click="newClick(item.id)"><i></i><span>{{item.created_at.split(' ')[0]}}</span> {{ item.article_cate.category }} | {{ item.title }}</a>
+                            <li v-for="(item, index) in items" :key="item.id">
+                                <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-5 col-md-6 col-xs-12">
-                        <img :src="content.img" alt="">
-                        <h6>{{content.title}}</h6>
-                        <p>{{content.summary}}</p>
+                    <div class="col-lg-5 col-md-6 col-xs-12" v-for="(item, index) in items.slice(1,2)" :key="item.id">
+                        <img :src="item.img" alt="">
+                        <h6>{{item.title}}</h6>
+                        <p>{{item.summary}}</p>
                         <div class="date">
-                            <span>{{content.created_at}}</span>
-                            <a :href="'/newsDetails.html?id=' + content.id">阅读全文</a>
+                            <span>{{item.created_at}}</span>
+                            <a :href="'/newsDetails.html?id=' + item.id">阅读全文</a>
                         </div>
                     </div>
                 </div>
@@ -348,7 +348,7 @@
                             </div>
                             <ul class="quick-link-list">
                                 <li>西安学学信息技术有限公司</li>
-                                <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
+                                <li>西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
@@ -434,22 +434,14 @@
                         axios.get('https://soogua.aixuexue.net/api/v1/articles?include=article_cate&category=28&size=5&fields[article]=id,category,title,summary,created_at,img').then(data => {
                             this.items = data.data.data.contents.data
                         })
-                    },
-                    showMarquee: function() {
-                        this.animate = true;
-                        setTimeout(() => {
-                            this.items.push(this.items[0]);
-                            this.items.shift();
-                            this.animate = false;
-                        }, 500)
                     }
+
                 }
             });
             const content = new Vue({
                 el: "#app",
                 data: {
                     items: [],
-                    content: [],
                     active: 0,
                 },
                 created: function() {
@@ -461,16 +453,6 @@
                             this.items = data.data.data.contents.data
                         })
                     },
-                    newClick(id) {
-                        axios.get('https://soogua.aixuexue.net/api/v1/articles/' + id).then(data => {
-                            this.content = data.data.data
-                        })
-                    },
-                    //  点击改变文字颜色
-                    changeLi(index) {
-                        this.active = index;
-                    }
-
                 }
             });
         </script>
