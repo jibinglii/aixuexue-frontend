@@ -695,8 +695,7 @@ footer .copyright {
         padding: 0;
         display: none;
     }
-    .footer-widget.widget::before,
-    {
+    .footer-widget.widget::before {
         border: none;
     }
     .footer-widget img {
