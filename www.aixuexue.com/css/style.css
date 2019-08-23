@@ -591,12 +591,12 @@ section {
     justify-content: space-between;
 }
 
-.support img {
+.support a {
     margin-right: 80px;
     margin-bottom: 50px;
 }
 
-.support img:nth-child(5n) {
+.support a:nth-child(5n) {
     margin-right: 0;
 }
 
@@ -786,10 +786,18 @@ section {
         width: 100%;
         padding-top: 20px;
     }
+    .support a {
+        width: 25%;
+        margin-right: 7px;
+        margin-bottom: 0;
+    }
     .support img {
-        width: 26%;
+        width: 100%;
         margin: 0;
         margin-bottom: 20px;
+    }
+    .support a:nth-child(3n) {
+        margin-right: 0px;
     }
     .support .section-title h2 {
         margin-bottom: 40px;
