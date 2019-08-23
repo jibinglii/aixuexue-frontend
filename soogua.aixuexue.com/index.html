@@ -20,12 +20,13 @@
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="row">
             <div class="navbar-header page-scroll col-lg-8 col-md-8">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> 
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> 
-             </button>
+                    <span class="icon-bar"></span>
+                </button>
                 <a href="#page-top" class="navbar-brand"><img src="images/logo.png" class="img-responsive" alt=""></a>
             </div>
 
@@ -197,8 +198,10 @@
         <div class="section page7" data-anchor="aboutus">
             <div class="aboutUs">
                 <div class="bg">
+
                     <div class="content">
-                        <h3>关于我们</h3>
+                        <a href="https://www.aixuexue.com">
+                        <h3>关于我们</h3> </a>
                         <p>致力于</p>
                         <p>以兴趣为圆心打造社交平台</p>
                         <p>执着于</p>
@@ -207,6 +210,7 @@
                         <p>以声音为重点勾画社交逻辑</p>
                         <p class="text">搜瓜，以社交的名义，致敬热爱</p>
                     </div>
+
                 </div>
             </div>
             <footer id="footer">
@@ -215,7 +219,9 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
                                 <div class="footer-section-title col-12 p-0">
-                                    <h3>西安学学信息技术有限公司</h3>
+                                    <a href="https://www.aixuexue.com">
+                                        <h3>西安学学信息技术有限公司</h3>
+                                    </a>
                                 </div>
                                 <ul class="quick-link-list">
                                     <li>
@@ -224,26 +230,30 @@
                                     <li>地址：西安市 雁塔区 高新三路 蓝溪国际大厦 1809</li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
+                            <div
+                                class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5  footer-widget widget_2">
                                 <dl>
-                                    <dt><img src="picture/nopublic.jpeg" class=""/></dt>
+                                    <dt><img src="picture/nopublic.jpeg" class="" /></dt>
                                     <dd>微信公众号</dd>
                                 </dl>
                             </div>
-                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
+                            <div
+                                class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-2  mb-lg-0 mb-md-0 mb-sm-5 footer-widget widget_2">
                                 <dl>
-                                    <dt><img src="picture/weibo.png" class=""/></dt>
+                                    <dt><img src="picture/weibo.png" class="" /></dt>
                                     <dd>微博公众号</dd>
                                 </dl>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget mobile_news">
+                            <div
+                                class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget widget mobile_news">
                                 <div class="footer-section-title col-12 p-0">
                                     <h3>搜瓜动态</h3>
                                 </div>
                                 <ul class="quick-link-list" id="app" v-cloak>
                                     <li v-for="item in items" :key="item.id">
-                                        <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} | {{ item.title }}</a>
-                                        <li><a href="news.html" class="more">更多内容</a></li>
+                                        <a :href="'/newsDetails.html?id=' + item.id">{{ item.article_cate.category }} |
+                                            {{ item.title }}</a>
+                                    <li><a href="news.html" class="more">更多内容</a></li>
                                     </li>
                                 </ul>
                             </div>
@@ -254,7 +264,8 @@
                     <div class="auto-container">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-12 copyright-text">
-                                <p>西安学学信息技术有限公司 © 2018-2019 soogua.aixuexue.com 版权所有 <a href="http://beian.miit.gov.cn/">陕ICP备18017596号-1</a></p>
+                                <p>西安学学信息技术有限公司 © 2018-2019 soogua.aixuexue.com 版权所有 <a
+                                        href="http://beian.miit.gov.cn/">陕ICP备18017596号-1</a></p>
                             </div>
                         </div>
                     </div>
@@ -266,7 +277,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.fullpage.min.js"></script>
     <script>
-        (function() {
+        (function () {
             $('.fullpage').fullpage({
                 navigation: true,
                 anchors: ['index', 'introduct', '', '', '', '', 'aboutus'],
@@ -283,7 +294,7 @@
             document.documentElement.style.fontSize = w / 20 + 'px';
         }
         placeholderPic();
-        window.onresize = function() {
+        window.onresize = function () {
             placeholderPic();
         }
     </script>
@@ -308,8 +319,8 @@
         })
     </script>
     <script>
-        $(function() {
-            $('.navbar-nav li').click(function() {
+        $(function () {
+            $('.navbar-nav li').click(function () {
                 $(this).addClass('active').siblings().removeClass('active');
             })
         })
