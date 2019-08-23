@@ -413,6 +413,7 @@ section {
     display: flex;
     box-sizing: border-box;
     justify-content: center;
+    border-bottom: solid 1px #E0E0E0;
 }
 
 .marquee_box {
@@ -436,6 +437,8 @@ section {
     height: 30px;
     line-height: 30px;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
 }
 
 .marquee_list li span {
@@ -452,6 +455,13 @@ section {
     .marquee_box li span,
     .marquee_title span {
         font-size: 12px;
+    }
+    .marquee_list li span.title {
+        width: 200px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
     }
     .marquee_title {
         padding: 0 5px;
@@ -581,12 +591,12 @@ section {
     justify-content: space-between;
 }
 
-.support img {
+.support a {
     margin-right: 80px;
     margin-bottom: 50px;
 }
 
-.support img:nth-child(5n) {
+.support a:nth-child(5n) {
     margin-right: 0;
 }
 
@@ -685,7 +695,7 @@ section {
         display: block;
     }
     section {
-        padding: 20px 0;
+        padding: 30px 0 0;
     }
     .section-title {
         margin-bottom: 20px;
@@ -695,9 +705,6 @@ section {
     }
     .section-title p {
         font-size: .75rem;
-    }
-    .top {
-        /* margin-top: 1.4rem; */
     }
     span {
         font-size: 12px;
@@ -719,10 +726,7 @@ section {
     }
     .desc {
         text-align: center;
-        padding-bottom: 1.5rem;
-    }
-    .axx .desc {
-        margin-top: 30px;
+        padding-bottom: 2.0rem;
     }
     .aboutus {
         padding: 0;
@@ -742,11 +746,11 @@ section {
         text-align: center;
         padding: 45px 0 0;
     }
-    .soogua,
-    .store,
-    .qun,
-    .axx {
-        height: 494px;
+    .store.odd {
+        height: 32rem;
+    }
+    .axx.odd {
+        height: 30.7rem;
     }
     .soogua .row,
     .store .row,
@@ -764,6 +768,9 @@ section {
         left: 0;
         padding: 0;
     }
+    .axx.odd img {
+        top: 237px;
+    }
     .soogua .col-xs-12.img,
     .qun .col-xs-12.img {
         padding: 0;
@@ -779,13 +786,33 @@ section {
         width: 100%;
         padding-top: 20px;
     }
+    .support a {
+        width: 25%;
+        margin-right: 7px;
+        margin-bottom: 0;
+    }
     .support img {
-        width: 26%;
+        width: 100%;
         margin: 0;
         margin-bottom: 20px;
     }
+    .support a:nth-child(3n) {
+        margin-right: 0px;
+    }
     .support .section-title h2 {
         margin-bottom: 40px;
+    }
+    .product {
+        padding: 30px 0;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .axx.odd {
+        height: 29.4rem;
+    }
+    .store.odd {
+        height: 31rem;
     }
 }
 
@@ -968,6 +995,36 @@ footer .copyright {
     }
     .footer-section-title {
         justify-content: center;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .marquee_box {
+        width: 90%;
+    }
+    .desc {
+        flex: 0 0 100%;
+    }
+    .soogua p,
+    .store p,
+    .qun p,
+    .axx p {
+        padding: 1rem 0;
+    }
+    .store.odd {
+        height: 463px;
+    }
+    .axx.odd {
+        height: 426px;
+    }
+    .axx.odd img {
+        top: 226px;
+    }
+    .news h6 {
+        font-size: 1rem;
+    }
+    .footer-widget.widget dl img {
+        width: 80px;
     }
 }
 
