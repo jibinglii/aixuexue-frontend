@@ -203,11 +203,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12 form">
                     <form action="">
-                        <input type="text" placeholder="姓名">
-                        <input type="text" placeholder="电话">
-                        <input type="text" placeholder=" QQ">
+                        <input type="text" placeholder="姓名" name="nickname" value="">
+                        <input type="text" placeholder="电话" name="mobile" value="">
+                        <input type="text" placeholder=" QQ" name="qq" value="">
                     </form>
-                    <a href="">点击入驻</a>
+                    <button id="apply" type="submit">点击入驻</button>
                 </div>
             </div>
         </div>
@@ -218,7 +218,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget">
                         <div class="footer-section-title col-12 p-0">
-                            <h3>西安学学信息技术有限公司</h3>
+                            <a href="https://www.aixuexue.com" ><h3>西安学学信息技术有限公司</h3></a>
                         </div>
                         <ul class="quick-link-list">
                             <li>网址：<a href="http://qun.soogua.cn">qun.soogua.cn</a></li>
@@ -315,6 +315,30 @@
                 $(this).addClass('active').siblings().removeClass('active');
             })
         })
+
+
+        $('#apply').click(function(){
+            var mobile = $("input[name='mobile']").val();
+            var nickname = $("input[name='nickname']").val();
+            var qq = $("input[name='qq']").val();
+            console.log(qq);
+            $.ajax({
+                type:"POST",
+                contentType : "application/json",
+                url:'http://aixuexue-backend.dev.aixuexue.com:8002/api/v2/alliance/apply',
+                data:{"mobile":mobile,"nickname":nickname,"qq":qq,"type":0,"wechat":''},
+                error:function(request){
+                   alert('入驻失败');
+                },
+                success:function(data){
+                    alert("入驻成功");
+                }
+            });
+        });
+
+
+
+
     </script>
 </body>
 
