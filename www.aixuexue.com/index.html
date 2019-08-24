@@ -101,11 +101,11 @@
         <!-- banner  end  -->
 
         <section class="marquee_news">
-            <div class="marquee">
+            <div class="marquee" v-cloak>
                 <div class="marquee_box">
                     <ul class="marquee_list" :class="{marquee_top:animate}">
                         <li v-for="(item, index) in items">
-                            <span> {{ item.article_cate.category }} | {{ item.title }}</span>
+                            <span class="title"> {{ item.article_cate.category }} | {{ item.title }}</span>
                             <span> {{item.created_at.split(' ')[0]}}</span>
                         </li>
                     </ul>
@@ -313,16 +313,16 @@
                 <h2>合作与支持</h2>
             </div>
             <div class="auto-container">
-                <img src="picture/ali.png" alt="" class="">
-                <img src="picture/bdy.png" alt="" class="">
-                <img src="picture/hx.png" alt="" class="">
-                <img src="picture/lian.png" alt="" class="">
-                <img src="picture/zfb.png" alt="" class="">
-                <img src="picture/wx.png" alt="" class="">
-                <img src="picture/kd.png" alt="" class="">
-                <img src="picture/fy.png" alt="" class="">
-                <img src="picture/253.png" alt="" class="">
-                <img src="picture/EA.png" alt="" class="">
+                <a href=""><img src="picture/ali.png" alt="" class=""></a>
+                <a href=""><img src="picture/bdy.png" alt="" class=""></a>
+                <a href=""><img src="picture/hx.png" alt="" class=""></a>
+                <a href=""><img src="picture/lian.png" alt="" class=""></a>
+                <a href=""><img src="picture/zfb.png" alt="" class=""></a>
+                <a href=""><img src="picture/wx.png" alt="" class=""></a>
+                <a href=""><img src="picture/kd.png" alt="" class=""></a>
+                <a href=""><img src="picture/fy.png" alt="" class=""></a>
+                <a href=""><img src="picture/253.png" alt="" class=""></a>
+                <a href=""><img src="picture/EA.png" alt="" class=""></a>
             </div>
         </section>
         <section class="news" id="app" v-cloak>
@@ -354,6 +354,7 @@
         <footer id="foot">
             <div class="footer-top overlay-2 section-back-image-2" data-background="">
                 <div class="auto-container">
+
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-12 col-12  mb-lg-0 mb-md-4 mb-sm-5 footer-widget info">
                             <div class="footer-section-title col-12 p-0">
